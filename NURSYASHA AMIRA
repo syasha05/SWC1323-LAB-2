@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+//Function to convert Celcius to Fahrenheit
+double celciusToFahrenheit(double celcius) {
+	return (celcius * 9.00/5.00) + 32.00;
+} 
+
+//Function to convert Fahrenheit to Celcius
+double fahrenheitToCelcius(double fahrenheit) {
+	return (fahrenheit - 32.00) * 5.00/9.00;
+}
+
+int main() {
+	double temperature;
+	char scale;
+	
+	cout << "Enter temperature: ";
+	cin >> temperature;
+	
+	cout << "Enter scale (C for Celcius, F for Fahrenheit): ";
+	cin >> scale;
+	
+	if (scale == 'C' || scale == 'c') {
+		double convertedTemp = celciusToFahrenheit(temperature);
+		cout << "Converted temperature: " << convertedTemp << " F" << endl;
+    }
+	else if (scale == 'F' || scale == 'f') {
+		double convertedTemp = fahrenheitToCelcius(temperature);
+		cout << "Converted temperature: " << convertedTemp << " C" << endl;
+	}
+	else {
+		cout << "Invalid scale entered" << endl;
+	}
+	
+	return 0;
+}
